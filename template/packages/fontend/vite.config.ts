@@ -80,7 +80,7 @@ export default defineConfig(({mode})=>({
       },
     }),
     AutoImport({
-      dirs: ['./src/utils'],
+      dirs: ['./src/utils','./src/composables'],
       imports: ['vue', 'vue-router', {
         'phecda-vue': ['useV', 'useR'],
         'axios': [['default', 'axios']],
