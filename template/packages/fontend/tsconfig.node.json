@@ -1,0 +1,11 @@
+{
+  "include": ["vite.config.*", "vitest.config.*", "cypress.config.*", "playwright.config.*","uno.config.*"],
+
+  "compilerOptions": {
+    "composite": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "allowSyntheticDefaultImports": true
+
+  }
+}

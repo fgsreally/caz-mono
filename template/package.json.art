@@ -1,0 +1,53 @@
+{
+  "name": "{{name}}",
+  "version": "1.0.0",
+  "description": "{{description}}",
+  "type": "module",
+  "packageManager": "pnpm@7.21.0",
+  "scripts": {
+    "dev": "turbo run dev --filter=./packages/*",
+    "build": "turbo run build --filter=./packages/*",
+    {{if docs}}
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs",
+    {{/if}}
+    "lint": "eslint .",
+    {{if test}}
+    "test:unit": "vitest",
+    {{/if}}
+    {{if e2e}}
+    "test:e2e": "cypress open",
+    {{/if}}
+    {{if lib}}
+    "publish": "changeset publish"
+    {{/if}}
+  },
+  "keywords": [],
+  "author": "fgsreally",
+  "license": "MIT",
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.34.1",
+        "eslint": "^8.31.0",
+    "turbo": "^1.10.7",
+     "@types/node": "^18.15.11",
+    "cross-env": "^7.0.3",
+      {{if lib}}
+    "tsup": "^6.5.0",
+    "@changesets/cli": "^2.26.0",
+    {{/if}}
+   
+     {{if e2e}}
+    "cypress": "^12.8.0",
+    {{/if}}
+
+    {{if docs}}
+    "vitepress": "1.0.0-alpha.40",
+    {{/if}}
+    {{if test}}
+        "jsdom": "^21.1.1",
+    "vitest": "^0.32.4",
+    {{/if}}
+        "typescript": "^4.9.4"
+  }
+}
